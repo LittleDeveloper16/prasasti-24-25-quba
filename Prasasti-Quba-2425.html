@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prasasti Wisuda QUBA 2024/2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #FFD700, #800080);
+      color: #4B004B;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      overflow: hidden;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 40px 5px 40px 5px;
+      padding: 40px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+      max-width: 850px;
+      border: 4px solid #FFD700;
+    }
+    h1, h2, .footer-text {
+      margin: 10px 0;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2em;
+      color: #800080;
+    }
+    h2#countdown {
+      font-size: 2.5em;
+      font-weight: 700;
+      color: #00843D;
+    }
+    .footer-text {
+      font-size: 1.1em;
+      color: #4B004B;
+    }
+    img.logo {
+      width: 200px;
+      margin-bottom: 10px;
+    }
+    .petals {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      z-index: -1;
+    }
+    .petal {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      animation: fall 10s linear infinite;
+    }
+    @keyframes fall {
+      0% { transform: translateY(-100px) rotate(0deg); }
+      100% { transform: translateY(120vh) rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="petals">
+    <div class="petal" style="left:10%; animation-delay: 0s;"></div>
+    <div class="petal" style="left:30%; animation-delay: 2s;"></div>
+    <div class="petal" style="left:50%; animation-delay: 4s;"></div>
+    <div class="petal" style="left:70%; animation-delay: 1s;"></div>
+    <div class="petal" style="left:90%; animation-delay: 3s;"></div>
+  </div>
+
+  <div class="container">
+    <!-- Menggunakan gambar logo terbaru -->
+    <img src="https://assets.onecompiler.app/43jjjj4pw/43jjjh7ce/watermark%20kti%20(1).png
+  " alt="QUBA Logo" class="logo" />
+    <h1>Kalau kamu sudah masuk website, berati sudah</h1>
+    <h2 id="countdown"></h2>
+    <div class="footer-text">
+      setelah kami, <strong>Angkatan 2024/2025</strong>, menyelesaikan jenjang <br />Primary dan Secondary di QUBA Islamic School.
+    </div>
+  </div>
+
+  <script>
+    const graduationDate = new Date("2025-06-21");
+    const today = new Date();
+    const diffTime = today - graduationDate;
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+    let countdownText = "";
+    if (diffDays < 0) {
+      countdownText = `H-${Math.abs(diffDays)}`;
+    } else if (diffDays > 0) {
+      countdownText = `H+${diffDays}`;
+    } else {
+      countdownText = "Hari ini adalah hari wisuda!";
+    }
+
+    document.getElementById("countdown").textContent = countdownText;
+  </script>
+</body>
+</html>
